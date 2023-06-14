@@ -1,0 +1,10 @@
+@font-face {
+    font-family: 'Post No Bills Jaffna';
+    src: url('PostNoBillsJaffna-SemiBold.woff2') format('woff2'),
+        url('PostNoBillsJaffna-SemiBold.woff') format('woff'),
+        url('PostNoBillsJaffna-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+

@@ -1,0 +1,1021 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+button {
+  outline: none;
+  border: 0;
+  background: transparent;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+}
+
+.page {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+}
+.page .main-screen {
+  min-height: 100vh;
+  position: relative;
+}
+.page .main-screen__bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.page .ibg {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+.page .ibg .back {
+  display: none;
+}
+
+body._lock {
+  overflow: hidden;
+}
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 500;
+  background: #242B33;
+}
+
+.header__container {
+  max-width: 1160px;
+  margin: 0 auto;
+  display: flex;
+  padding: 10px 30px;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 70px;
+}
+
+.header__logo {
+  position: relative;
+  z-index: 5;
+  min-width: none;
+}
+.header__logo h2 {
+  font-family: "Post No Bills Jaffna SemiBold";
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 54px;
+  color: #FFFFFF;
+}
+.header__logo p {
+  font-family: "Raleway";
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.12em;
+  color: #FFFFFF;
+}
+
+.menu__icon {
+  display: none;
+}
+
+.menu__list > li {
+  position: relative;
+  margin: 0px 0px 0px 35px;
+}
+.menu__list > li:hover {
+  text-decoration: underline;
+}
+
+.menu__link {
+  color: #FFFFFF;
+  font-size: 18px;
+  font-family: "Raleway";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.05em;
+}
+
+@media (min-width: 767px) {
+  .menu__list {
+    display: flex;
+    align-items: center;
+  }
+  .menu__list > li {
+    padding: 10px 0;
+  }
+  .menu__list-icon {
+    display: flex;
+    margin: 0px 0px 0px 50px;
+  }
+  .menu__list-icon .menu__link-icon {
+    margin: 0px 0px 0px 30px;
+  }
+}
+@media (max-width: 767px) {
+  .menu__icon {
+    z-index: 50;
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 18px;
+    cursor: pointer;
+  }
+  .menu__icon span, .menu__icon::before, .menu__icon::after {
+    left: 0;
+    position: absolute;
+    height: 10%;
+    width: 100%;
+    transition: all 0.3s ease 0s;
+    background-color: white;
+  }
+  .menu__icon::before, .menu__icon::after {
+    content: "";
+  }
+  .menu__icon::before {
+    top: 0;
+  }
+  .menu__icon::after {
+    bottom: 0;
+  }
+  .menu__icon span {
+    top: 50%;
+    transform: scale(1) translate(0px, -50%);
+  }
+  .menu__icon._active span {
+    transform: scale(0) translate(0px, -50%);
+  }
+  .menu__icon._active::before {
+    top: 50%;
+    transform: rotate(-45deg) translate(0px, -50%);
+  }
+  .menu__icon._active::after {
+    bottom: 50%;
+    transform: rotate(45deg) translate(0px, 50%);
+  }
+  .menu__body {
+    text-align: center;
+    z-index: 2;
+    position: fixed;
+    left: -100%;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(36, 43, 51, 0.95);
+    padding: 100px 30px 30px 30px;
+    transition: left 0.3s ease 0s;
+    overflow: auto;
+  }
+  .menu__body::before {
+    content: "";
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 85px;
+    background: #242B33;
+    z-index: 500;
+  }
+  .menu__body._active {
+    left: 0;
+  }
+  .menu__list, .menu__list-icon {
+    font-size: 24px;
+  }
+  .menu__list > li, .menu__list-icon > li {
+    margin: 0px 0px 50px 0px;
+  }
+  .menu__list > li:last-child, .menu__list-icon > li:last-child {
+    margin-bottom: 0;
+  }
+  .menu__list {
+    margin-top: 20px;
+  }
+  .menu__list a {
+    font-size: 35px;
+    line-height: 1.3;
+  }
+}
+@font-face {
+  font-family: "Playfair Display";
+  src: url("../fonts/PlayfairDisplay-Bold.woff2") format("woff2"), url("../fonts/PlayfairDisplay-Bold.woff") format("woff"), url("../fonts/PlayfairDisplay-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Light.woff2") format("woff2"), url("../fonts/Roboto-Light.woff") format("woff"), url("../fonts/Roboto-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Raleway";
+  src: url("../fonts/Raleway-Regular.woff2") format("woff2"), url("../fonts/Raleway-Regular.woff") format("woff"), url("../fonts/Raleway-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Post No Bills Jaffna SemiBold";
+  src: url("../fonts/PostNoBillsJaffna-SemiBold.woff2") format("woff2"), url("../fonts/PostNoBillsJaffna-SemiBold.woff") format("woff"), url("../fonts/PostNoBillsJaffna-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+.title {
+  font-family: "Playfair Display";
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 64px;
+  color: #D4C17F;
+}
+
+.apart {
+  font-family: "Raleway";
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 28px;
+  color: #FFFFFF;
+}
+
+html,
+body {
+  height: 100%;
+  background-color: #242B33;
+}
+
+.container {
+  max-width: 1130px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.heder__contant .block__title {
+  width: 100%;
+  padding: 0 15px;
+  z-index: 1;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  top: 35%;
+  text-align: center;
+}
+.heder__contant .block__title h2 {
+  margin-bottom: 10vh;
+}
+@media (max-width: 767px) {
+  .heder__contant .block__title h2 {
+    font-size: calc(23px + 42.5 * ((100vw - 320px) / 1160));
+  }
+}
+@media (max-width: 767px) {
+  .heder__contant .block__title h2 {
+    font-size: calc(23px + 25 * (100vw / 1160));
+  }
+}
+@media (max-width: 350px) {
+  .heder__contant .block__title h2 {
+    margin-bottom: 4vh;
+  }
+}
+.heder__contant .block__title img {
+  width: 40px;
+  height: 40px;
+}
+.heder__contant .block__contact {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 30px;
+  z-index: 1;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  bottom: 10%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+}
+.heder__contant .block__contact .contact {
+  display: flex;
+  gap: 17px;
+}
+.heder__contant .block__contact p {
+  font-family: "Raleway";
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  color: #FFFFFF;
+}
+.heder__contant .block__contact img {
+  height: 21px;
+}
+@media (max-width: 767px) {
+  .heder__contant .block__title {
+    top: 25%;
+  }
+  .heder__contant .block__contact {
+    display: flex;
+    gap: 0;
+    flex-direction: column;
+    align-items: center;
+    bottom: 10%;
+  }
+  .heder__contant .block__contact .contact__map {
+    padding-bottom: 20px;
+  }
+}
+
+.contenent .testimonials {
+  z-index: 2;
+  padding: 110px 0;
+  position: relative;
+  overflow: hidden;
+}
+.contenent .testimonials .block__tesstimonials {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+.contenent .testimonials .block__tesstimonials .block__block {
+  max-width: 193px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+}
+.contenent .testimonials .block__tesstimonials .block__block .block__img {
+  display: flex;
+  max-width: 80px;
+}
+.contenent .testimonials .block__tesstimonials .block__block .block__img img {
+  width: 100%;
+}
+.contenent .testimonials .block__tesstimonials .block__block .block__text {
+  margin-top: 53px;
+  text-align: center;
+}
+.contenent .testimonials .block__tesstimonials .block__block .block__text p {
+  font-family: "Roboto";
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 27px;
+  color: #FFFFFF;
+}
+@media (max-width: 767px) {
+  .contenent .testimonials .block__tesstimonials {
+    flex-direction: column;
+    max-width: 320px;
+    margin: 0 auto;
+    align-items: center;
+  }
+  .contenent .testimonials .block__tesstimonials .block__block {
+    margin-bottom: 53px;
+  }
+  .contenent .testimonials .block__tesstimonials .block__block .block__text {
+    margin-top: 20px;
+  }
+}
+.contenent .testimonials .II {
+  position: absolute;
+  top: -50px;
+  right: -300px;
+  max-width: 301px;
+}
+.contenent .testimonials .II img {
+  width: 100%;
+}
+@media (max-width: 767px) {
+  .contenent .testimonials {
+    padding-bottom: 50px;
+  }
+}
+@media (max-width: 767px) {
+  .contenent .apartmens .apartmens__title h2 {
+    font-size: calc(23px + 42.5 * ((100vw - 320px) / 1160));
+  }
+}
+@media (max-width: 767px) {
+  .contenent .apartmens .apartmens__title h2 {
+    font-size: calc(23px + 25 * (100vw / 1160));
+  }
+}
+@media (max-width: 767px) {
+  .contenent .apartmens .apartmens__title {
+    text-align: center;
+  }
+}
+.contenent .apartmens .apartmens__column {
+  padding-top: 100px;
+  position: relative;
+}
+.contenent .apartmens .apartmens__column .block__apartmens {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+.contenent .apartmens .apartmens__column .block__apartmens .block__item {
+  position: relative;
+}
+.contenent .apartmens .apartmens__column .block__apartmens .block__item .block__img {
+  position: relative;
+  max-width: 535px;
+}
+.contenent .apartmens .apartmens__column .block__apartmens .block__item .block__img img {
+  width: 100%;
+}
+.contenent .apartmens .apartmens__column .block__apartmens .block__item .block__img .block__text {
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  z-index: 2;
+}
+.contenent .apartmens .apartmens__column .block__apartmens .block__item .block__img::after {
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(transparent, #242B33);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.contenent .apartmens .apartmens__column .III {
+  z-index: -1;
+  position: absolute;
+  top: 40px;
+  left: -230px;
+  max-width: 452px;
+}
+.contenent .apartmens .apartmens__column .III img {
+  width: 100%;
+}
+@media (max-width: 767px) {
+  .contenent .apartmens .apartmens__column {
+    padding-top: 50px;
+  }
+  .contenent .apartmens .apartmens__column .block__apartmens {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-column-gap: 30px;
+  }
+}
+.contenent .forms {
+  overflow: hidden;
+  background: url("../img/forms/back.png") center no-repeat;
+  background-size: cover;
+  min-height: 560px;
+}
+.contenent .forms .forms__block {
+  display: flex;
+  min-height: 560px;
+  flex-direction: column;
+  justify-content: center;
+}
+.contenent .forms .forms__block .forms__column {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 35px;
+}
+.contenent .forms .forms__block .forms__column .forms__item {
+  max-width: 540px;
+}
+.contenent .forms .forms__block .forms__column .forms__item .item__title h2 {
+  padding-bottom: 50px;
+}
+@media (max-width: 767px) {
+  .contenent .forms .forms__block .forms__column .forms__item .item__title h2 {
+    font-size: calc(23px + 42.5 * ((100vw - 320px) / 1160));
+  }
+}
+@media (max-width: 767px) {
+  .contenent .forms .forms__block .forms__column .forms__item .item__title h2 {
+    font-size: calc(23px + 25 * (100vw / 1160));
+  }
+}
+.contenent .forms .forms__block .forms__column .forms__item .item__title p {
+  font-family: "Raleway";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #FFFFFF;
+}
+.contenent .forms .forms__block .forms__column .forms__input {
+  max-width: 540px;
+}
+.contenent .forms .forms__block .forms__column .forms__input .input__column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-row-gap: 35px;
+  grid-column-gap: 30px;
+  align-items: center;
+  /* Firefox 19+ */
+  /* Firefox 18- */
+}
+.contenent .forms .forms__block .forms__column .forms__input .input__column .input {
+  max-width: 255px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.0901960784);
+  font-family: "Raleway";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 27px;
+  color: white;
+  text-align: center;
+}
+.contenent .forms .forms__block .forms__column .forms__input .input__column .input::-webkit-input-placeholder {
+  opacity: 1;
+  -webkit-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+}
+.contenent .forms .forms__block .forms__column .forms__input .input__column .input::-moz-placeholder {
+  opacity: 1;
+  -moz-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+}
+.contenent .forms .forms__block .forms__column .forms__input .input__column .input:-moz-placeholder {
+  opacity: 1;
+  -moz-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+}
+.contenent .forms .forms__block .forms__column .forms__input .input__column .input:-ms-input-placeholder {
+  opacity: 1;
+  -ms-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+}
+.contenent .forms .forms__block .forms__column .forms__input .input__column .input:focus::-webkit-input-placeholder {
+  opacity: 0;
+  -webkit-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+}
+.contenent .forms .forms__block .forms__column .forms__input .input__column .input:focus::-moz-placeholder {
+  opacity: 0;
+  -moz-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+}
+.contenent .forms .forms__block .forms__column .forms__input .input__column .input:focus:-moz-placeholder {
+  opacity: 0;
+  -moz-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+}
+.contenent .forms .forms__block .forms__column .forms__input .input__column .input:focus:-ms-input-placeholder {
+  opacity: 0;
+  -ms-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+}
+.contenent .forms .forms__block .forms__column .forms__input .input__column .input::-webkit-input-placeholder {
+  color: white;
+}
+.contenent .forms .forms__block .forms__column .forms__input .input__column .input::-moz-placeholder {
+  color: white;
+}
+.contenent .forms .forms__block .forms__column .forms__input .input__column .input:-moz-placeholder {
+  color: white;
+}
+.contenent .forms .forms__block .forms__column .forms__input .input__column .input:-ms-input-placeholder {
+  color: white;
+}
+.contenent .forms .forms__block .forms__column .forms__input .input__column .text__input {
+  font-family: "Raleway";
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 16px;
+  text-align: center;
+  color: #E7E7E7;
+}
+.contenent .forms .forms__block .forms__column .forms__input .input__column .botton {
+  max-width: 255px;
+  height: 50px;
+  background: #D4C17F;
+}
+.contenent .forms .forms__block .forms__column .forms__input .input__column .botton p {
+  font-family: "Raleway";
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 27px;
+  text-align: center;
+  color: #FFFFFF;
+}
+@media (max-width: 767px) {
+  .contenent .forms .forms__block {
+    margin-top: 50px;
+  }
+  .contenent .forms .forms__block .forms__column {
+    flex-direction: column;
+    align-items: center;
+  }
+  .contenent .forms .forms__block .forms__column .item__title {
+    text-align: center;
+  }
+  .contenent .forms .forms__block .forms__column .forms__input .input__column {
+    display: block;
+  }
+  .contenent .forms .forms__block .forms__column .forms__input .input__column .input,
+  .contenent .forms .forms__block .forms__column .forms__input .input__column .botton {
+    max-width: 470px;
+  }
+  .contenent .forms .forms__block .forms__column .forms__input .input__column input,
+  .contenent .forms .forms__block .forms__column .forms__input .input__column button {
+    width: 100%;
+  }
+  .contenent .forms .forms__block .forms__column .forms__input .input__column > * {
+    margin-bottom: 10px;
+  }
+  .contenent .forms .forms__block .forms__column .forms__input .input__column > :last-child {
+    margin: 0;
+  }
+}
+.contenent .video {
+  margin-top: 50px;
+  overflow: hidden;
+}
+.contenent .video .video__block {
+  max-width: 719px;
+  margin: 0 auto;
+  max-height: 650px;
+  position: relative;
+}
+.contenent .video .video__block iframe {
+  width: 100%;
+  height: 650px;
+}
+@media (max-width: 767px) {
+  .contenent .video .video__block iframe {
+    height: 250px;
+  }
+}
+.contenent .video .video__block .IV {
+  overflow: hidden;
+  z-index: -1;
+  max-width: 418px;
+  position: absolute;
+  right: -240px;
+  top: 180px;
+}
+.contenent .video .video__block .IV img {
+  width: 100%;
+}
+.contenent .map {
+  margin-top: 180px;
+}
+@media (max-width: 767px) {
+  .contenent .map .map__title h2 {
+    font-size: calc(23px + 42.5 * ((100vw - 320px) / 1160));
+  }
+}
+@media (max-width: 767px) {
+  .contenent .map .map__title h2 {
+    font-size: calc(23px + 25 * (100vw / 1160));
+  }
+}
+.contenent .map .map__item {
+  padding-top: 100px;
+  position: relative;
+  max-width: 1110px;
+  min-height: 358px;
+  height: 100%;
+  max-width: 1110px;
+}
+.contenent .map .map__item iframe {
+  width: 100%;
+  height: 358px;
+}
+@media (max-width: 767px) {
+  .contenent .map .map__item iframe {
+    height: 250px;
+  }
+}
+.contenent .map .map__item .V {
+  position: absolute;
+  top: 40px;
+  left: -150px;
+  max-width: 268px;
+}
+.contenent .map .map__item .V img {
+  width: 100%;
+}
+@media (max-width: 767px) {
+  .contenent .map {
+    margin-top: 100px;
+  }
+  .contenent .map .map__title {
+    text-align: center;
+  }
+  .contenent .map .map__item {
+    padding-top: 30px;
+  }
+}
+.contenent .question {
+  margin-top: 180px;
+}
+@media (max-width: 767px) {
+  .contenent .question .question__title h2 {
+    font-size: calc(23px + 42.5 * ((100vw - 320px) / 1160));
+  }
+}
+@media (max-width: 767px) {
+  .contenent .question .question__title h2 {
+    font-size: calc(23px + 25 * (100vw / 1160));
+  }
+}
+.contenent .question .question__block {
+  padding-top: 50px;
+}
+.contenent .question .question__block .forms__input .input__column {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  /* Firefox 19+ */
+  /* Firefox 18- */
+}
+.contenent .question .question__block .forms__input .input__column .text__input {
+  max-width: 255px;
+}
+.contenent .question .question__block .forms__input .input__column .input {
+  max-width: 255px;
+  width: 100%;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.0901960784);
+  font-family: "Raleway";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 27px;
+  color: white;
+  text-align: center;
+}
+.contenent .question .question__block .forms__input .input__column .input::-webkit-input-placeholder {
+  opacity: 1;
+  -webkit-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+}
+.contenent .question .question__block .forms__input .input__column .input::-moz-placeholder {
+  opacity: 1;
+  -moz-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+}
+.contenent .question .question__block .forms__input .input__column .input:-moz-placeholder {
+  opacity: 1;
+  -moz-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+}
+.contenent .question .question__block .forms__input .input__column .input:-ms-input-placeholder {
+  opacity: 1;
+  -ms-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+}
+.contenent .question .question__block .forms__input .input__column .input:focus::-webkit-input-placeholder {
+  opacity: 0;
+  -webkit-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+}
+.contenent .question .question__block .forms__input .input__column .input:focus::-moz-placeholder {
+  opacity: 0;
+  -moz-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+}
+.contenent .question .question__block .forms__input .input__column .input:focus:-moz-placeholder {
+  opacity: 0;
+  -moz-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+}
+.contenent .question .question__block .forms__input .input__column .input:focus:-ms-input-placeholder {
+  opacity: 0;
+  -ms-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+}
+.contenent .question .question__block .forms__input .input__column .input::-webkit-input-placeholder {
+  color: white;
+}
+.contenent .question .question__block .forms__input .input__column .input::-moz-placeholder {
+  color: white;
+}
+.contenent .question .question__block .forms__input .input__column .input:-moz-placeholder {
+  color: white;
+}
+.contenent .question .question__block .forms__input .input__column .input:-ms-input-placeholder {
+  color: white;
+}
+.contenent .question .question__block .forms__input .input__column .text__input {
+  font-family: "Raleway";
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 16px;
+  text-align: center;
+  color: #E7E7E7;
+}
+.contenent .question .question__block .forms__input .input__column .botton {
+  max-width: 255px;
+  width: 100%;
+  height: 50px;
+  background: #D4C17F;
+}
+.contenent .question .question__block .forms__input .input__column .botton p {
+  font-family: "Raleway";
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 27px;
+  text-align: center;
+  color: #FFFFFF;
+}
+@media (max-width: 767px) {
+  .contenent .question {
+    margin-top: 50px;
+  }
+  .contenent .question .question__title {
+    text-align: center;
+  }
+  .contenent .question .question__block {
+    padding-top: 30px;
+  }
+  .contenent .question .question__block .forms__input {
+    text-align: center;
+  }
+  .contenent .question .question__block .forms__input .input__column {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 470px;
+  }
+  .contenent .question .question__block .forms__input .input__column .input,
+  .contenent .question .question__block .forms__input .input__column .botton,
+  .contenent .question .question__block .forms__input .input__column .text__input {
+    max-width: 470px;
+  }
+  .contenent .question .question__block .forms__input .input__column input,
+  .contenent .question .question__block .forms__input .input__column button,
+  .contenent .question .question__block .forms__input .input__column p {
+    width: 100%;
+  }
+  .contenent .question .question__block .forms__input .input__column > * {
+    margin-bottom: 10px;
+  }
+  .contenent .question .question__block .forms__input .input__column > :last-child {
+    margin: 0;
+  }
+}
+.contenent .footer {
+  background-color: #2D343C;
+  margin-top: 180px;
+}
+.contenent .footer .footer__footer {
+  padding: 72px 0px 60px 0px;
+  display: flex;
+  justify-content: space-between;
+}
+.contenent .footer .footer__footer .block__footer p,
+.contenent .footer .footer__footer .block__footer span {
+  font-family: "Raleway";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.05em;
+  color: #FFFFFF;
+}
+.contenent .footer .footer__footer .block-2 p,
+.contenent .footer .footer__footer .block-3 p,
+.contenent .footer .footer__footer .block-4 p {
+  padding-bottom: 15px;
+}
+.contenent .footer .footer__footer .block-4 span {
+  font-weight: 700;
+  color: #D4C17F;
+}
+.contenent .footer .footer__footer .block-4 .link__footer {
+  max-width: 150px;
+  display: flex;
+  justify-content: space-between;
+}
+.contenent .footer .footer__footer .block-4 .link__footer .link__img:nth-child(1) {
+  max-width: 28px;
+}
+.contenent .footer .footer__footer .block-4 .link__footer .link__img:nth-child(2) {
+  max-width: 35px;
+}
+.contenent .footer .footer__footer .block-4 .link__footer .link__img:nth-child(3) {
+  max-width: 11px;
+}
+.contenent .footer .footer__footer .block-4 .link__footer .link__img:nth-child(4) {
+  max-width: 20px;
+}
+.contenent .footer .footer__footer .block-4 .link__footer img {
+  width: 100%;
+}
+.contenent .footer .footer__footer .block-1 h2 {
+  font-family: "Post No Bills Jaffna SemiBold";
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 54px;
+  color: #FFFFFF;
+}
+.contenent .footer .footer__footer .block-1 p {
+  font-family: "Raleway";
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.12em;
+  color: #FFFFFF;
+}
+@media (max-width: 767px) {
+  .contenent .footer {
+    margin-top: 100px;
+  }
+  .contenent .footer .footer__footer {
+    display: block;
+  }
+  .contenent .footer .footer__footer .block__footer {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .contenent .footer .footer__footer .block-4 .link__footer {
+    margin: 0 auto;
+  }
+}
