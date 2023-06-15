@@ -75,6 +75,10 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: inherit;
 }
 
+a, button {
+  all: unset;
+}
+
 .wrapper {
   min-height: 100%;
   overflow: hidden;
@@ -331,6 +335,54 @@ body {
   padding: 0 15px;
 }
 
+.menu__list li a::after {
+  content: "";
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #D4C17F;
+  opacity: 0;
+  transition: opacity 300ms, transform 300ms;
+}
+.menu__list li a:hover::after,
+.menu__list li a:focus::after {
+  opacity: 1;
+  transform: translated(0, 0.2em, 0);
+}
+.menu__list li a:hover {
+  color: #D4C17F;
+  transition: color 300ms, transform 300ms;
+}
+
+a {
+  cursor: pointer;
+}
+
+.header__logo:hover h2, .header__logo:hover p {
+  color: #D4C17F;
+  transition: color 300ms, transform 300ms;
+}
+
+.header__logo:hover::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #D4C17F;
+  opacity: 0;
+  transition: opacity 300ms, transform 300ms;
+}
+
+.header__logo:hover::after,
+:focus::after {
+  opacity: 1;
+  transform: translated(0, 0.2em, 0);
+}
+
 .heder__contant .block__title {
   width: 100%;
   padding: 0 15px;
@@ -526,6 +578,14 @@ body {
   position: absolute;
   top: 0;
   left: 0;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+.contenent .apartmens .apartmens__column .block__apartmens .block__item .block__img:hover::after {
+  opacity: 0;
+}
+.contenent .apartmens .apartmens__column .block__apartmens .block__item .block__img:focus::after {
+  opacity: 0;
 }
 .contenent .apartmens .apartmens__column .III {
   z-index: -1;
@@ -676,6 +736,7 @@ body {
   max-width: 255px;
   height: 50px;
   background: #D4C17F;
+  transition: background 0.5s ease;
 }
 .contenent .forms .forms__block .forms__column .forms__input .input__column .botton p {
   font-family: "Raleway";
@@ -684,6 +745,15 @@ body {
   line-height: 27px;
   text-align: center;
   color: #FFFFFF;
+  transition: color 0.5s ease;
+}
+.contenent .forms .forms__block .forms__column .forms__input .input__column button:hover {
+  background: #FFFFFF;
+  transition: background 0.5s ease;
+}
+.contenent .forms .forms__block .forms__column .forms__input .input__column button:hover p {
+  color: #D4C17F;
+  transition: color 0.5s ease;
 }
 @media (max-width: 767px) {
   .contenent .forms .forms__block {
@@ -897,6 +967,7 @@ body {
   width: 100%;
   height: 50px;
   background: #D4C17F;
+  transition: background 0.5s ease;
 }
 .contenent .question .question__block .forms__input .input__column .botton p {
   font-family: "Raleway";
@@ -905,6 +976,15 @@ body {
   line-height: 27px;
   text-align: center;
   color: #FFFFFF;
+  transition: color 0.5s ease;
+}
+.contenent .question .question__block .forms__input .input__column button:hover {
+  background: #FFFFFF;
+  transition: background 0.5s ease;
+}
+.contenent .question .question__block .forms__input .input__column button:hover p {
+  color: #D4C17F;
+  transition: color 0.5s ease;
 }
 @media (max-width: 767px) {
   .contenent .question {
@@ -959,6 +1039,16 @@ body {
   line-height: 16px;
   letter-spacing: 0.05em;
   color: #FFFFFF;
+  transition: color 300ms, transform 300ms;
+}
+.contenent .footer .footer__footer .block-1 .foorer__logo:hover h2, .contenent .footer .footer__footer .block-1 .foorer__logo:hover p {
+  color: #D4C17F;
+  transition: color 300ms, transform 300ms;
+}
+.contenent .footer .footer__footer .block-2 p:hover,
+.contenent .footer .footer__footer .block-3 p:hover {
+  color: #D4C17F;
+  transition: color 300ms, transform 300ms;
 }
 .contenent .footer .footer__footer .block-2 p,
 .contenent .footer .footer__footer .block-3 p,
