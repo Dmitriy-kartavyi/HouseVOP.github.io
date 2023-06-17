@@ -323,6 +323,131 @@ body._lock {
   color: #FFFFFF;
 }
 
+.heder__contant .block__title .title {
+  transition: all 0.8s ease-in-out 0s;
+  transform: translate(0, -120%);
+  opacity: 0;
+}
+.heder__contant .block__title .title._active {
+  transform: translate(0px, 0px);
+  opacity: 1;
+}
+.heder__contant .block__title .img__title {
+  transition: all 0.8s ease-in-out 0s;
+  transform: translate(0, 0%);
+  opacity: 0;
+}
+.heder__contant .block__title .img__title._active {
+  transform: translate(0px, 0px);
+  opacity: 1;
+}
+
+.contact {
+  transition: all 0.8s ease-in-out 0s;
+  transform: translate(0, 120%);
+  opacity: 0;
+}
+.contact._active {
+  transform: translate(0px, 0px);
+  opacity: 1;
+}
+
+.block__tesstimonials .block__block .block__img {
+  transform: scale(0);
+  transition: all 0.8s ease 0s;
+}
+.block__tesstimonials .block__block .block__text {
+  transition: all 0.8s ease-in-out 0s;
+  transform: translate(0, 50%);
+  opacity: 0;
+}
+.block__tesstimonials .block__block .block__text._active {
+  transform: translate(0px, 0px);
+  opacity: 1;
+}
+.block__tesstimonials .block__block._active .block__img {
+  transform: scale(1);
+}
+.block__tesstimonials .block__block._active .block__text {
+  transform: translate(0px, 0px);
+  opacity: 1;
+  transition: all 0.5s ease 0.4s;
+}
+
+.title {
+  transition: all 0.8s ease-in-out 0s;
+  transform: translate(-80%, 0);
+  opacity: 0;
+  transition: all 0.8s ease 0s;
+}
+.title._active {
+  transform: translate(0px, 0px);
+  opacity: 1;
+}
+
+.block__apartmens {
+  overflow: hidden;
+}
+.block__apartmens .block__item-left {
+  transition: all 0.8s ease-in-out 0s;
+  transform: translate(-100%, 0);
+  opacity: 0;
+}
+.block__apartmens .block__item-left._active {
+  transform: translate(0px, 0px);
+  opacity: 1;
+}
+.block__apartmens .block__item-right {
+  transition: all 0.8s ease-in-out 0s;
+  transform: translate(100%, 0);
+  opacity: 0;
+}
+.block__apartmens .block__item-right._active {
+  transform: translate(0px, 0px);
+  opacity: 1;
+}
+
+.forms .forms__left {
+  transition: all 0.8s ease-in-out 0s;
+  transform: translate(-100%, 0);
+  opacity: 0;
+}
+.forms .forms__left._active {
+  transform: translate(0px, 0px);
+  opacity: 1;
+}
+.forms .form {
+  transform: scale(0);
+  transition: all 0.8s ease 0s;
+}
+.forms .form._active {
+  transform: scale(1);
+}
+
+.video .iframe {
+  transform: scale(0);
+  transition: all 0.8s ease 0s;
+}
+.video .iframe._active {
+  transform: scale(1);
+}
+
+.map__item .iframe {
+  transform: scale(0);
+  transition: all 0.8s ease 0s;
+}
+.map__item .iframe._active {
+  transform: scale(1);
+}
+
+.input__column .form {
+  transform: scale(0);
+  transition: all 0.8s ease 0s;
+}
+.input__column .form._active {
+  transform: scale(1);
+}
+
 html,
 body {
   height: 100%;
@@ -411,6 +536,25 @@ a {
 @media (max-width: 350px) {
   .heder__contant .block__title h2 {
     margin-bottom: 4vh;
+  }
+}
+.heder__contant .block__title .img__title {
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  margin: 0 auto 0 auto;
+  transform-origin: bottom;
+  animation-name: dance;
+  animation-timing-function: ease;
+}
+@keyframes dance {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-25px);
+  }
+  100% {
+    transform: translateY(0);
   }
 }
 .heder__contant .block__title img {
